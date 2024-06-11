@@ -1,21 +1,23 @@
 <body>
   <header>
-    <h1>Recherche d'Entreprise</h1>
+    <h1>Recherche d'Entreprises</h1>
     <nav>
       <ul>
         <li>
           <a>Accueil </a>
           <a>Entreprise </a>
           <a>A Propos </a>
-          <section>
-            <form>
-              <input type="text" placeholder="Filtre de Recherche" />
-              <button class="primary" type="button">Chercher</button>
-            </form>
-          </section>
         </li>
       </ul>
     </nav>
   </header>
-  <div id="carte"></div>
+  <div id="carte">
+    <section>
+      <form>
+        <input type="text" placeholder="Filtre de Recherche" #filter/>
+        <button class="primary" type="button" (click)="filterResults(filter.value)">Chercher</button>
+      </form>
+      <app-home [entrepriseFilteredList]="entrepriseFilteredList"></app-home>
+    </section>
+  </div>
 </body>
